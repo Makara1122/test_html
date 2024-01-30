@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    & main{
+        display: grid;
+        gap: 10px;
+        & .square {
+            width: 250px;
+            height: 250px;
+            font-size: 3rem;
+            display: grid;
+            place-content: center;
+        }
+        & .square:nth-child(1) {
+            background-color: yellow;
+            animation: rotate 2s 5 ;
+            /* transform: translateX(100%);
+            transform: scale(1.2); */
+        }
+        & .square:nth-child(2) {
+            background-color: rgb(172, 172, 40);
+            /* transform: translateY(-50%);
+            transform: rotate(45deg); */
+        }
+        & .square:nth-child(3) {
+            background-color: rgb(48, 48, 5);
+            /* transform: translate(100px, -100%);
+            transform: rotateX(45deg); */
+        }
+        & .square:nth-child(3) {
+            background-color: #e84b4b;
+            transition-duration: 1s;
+            animation-name: slide;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+            /* transition-timing-function: ease-in-out; */
+            transition-timing-function: linear;
+           /* transform: skew(45deg,10deg); */
+        }
+        & .square:hover {
+            background-color: aqua;
+            transform: scale(1.2);
+            border-radius: 200px;
+        }
+        & .square {
+            transition-property: all;
+            transition-duration: 1s;
+            animation-name: slide;
+            animation-iteration-count: 5;
+            /* transition-timing-function: ease-in-out; */
+            transition-timing-function: linear;
+            /* transition-delay: 1s; */
+        }
+    }
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(100%);
+    }
+    60% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateX(0);
+        background-color: #fff;
+    }
+    30% {
+        transform: translateX(100%);
+        background-image: none;
+    }
+    60% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
